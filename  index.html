@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JR Tools USA — Pro Tools. Real Prices. Alpharetta Pickup.</title>
+  <meta name="description" content="JR Tools USA — Pro-grade tools at real prices. Local pickup in Alpharetta, GA. Inventory updates weekly. Call/Text (404) 565-7099." />
+  <meta name="theme-color" content="#0b0c0f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JR Tools USA — Pro Tools. Real Prices." />
+  <meta property="og:description" content="Local pickup in Alpharetta, GA. Inventory updates weekly. Call/Text (404) 565-7099." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      /* Milwaukee vibe */
+      --bg: #0b0c0f;
+      --bg2:#0f1117;
+      --card:#121621;
+      --card2:#0f141d;
+      --text:#f3f5f7;
+      --muted:#a7b0bd;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --accent:#d61f2a;   /* red */
+      --accent2:#ff4757;  /* bright red highlight */
+      --ok:#38d68a;
+      --warn:#ffcc66;
+
+      --max: 1120px;
+      --r: 18px;
+
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 22px;
+      --space-5: 28px;
+      --space-6: 38px;
+      --space-7: 56px;
+      --space-8: 76px;
+
+      /* Changeable hero asset (swap this file to change hero image) */
+      --hero-image: url("images/hero.jpg");
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 700px at 18% 0%, rgba(214,31,42,.16), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(255,71,87,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 70%, #0a0b0f);
+      color:var(--text);
+      line-height:1.35;
+      letter-spacing:.1px;
+    }
+
+    a{color:inherit}
+    .skip{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      background:#fff; color:#000; padding:10px 12px; border-radius:10px; z-index:1000;
+    }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,12,15,.86), rgba(11,12,15,.55));
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width: 220px;
+    }
+    .logoMark{
+      width:36px; height:36px; border-radius:12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.18), transparent 60%),
+        linear-gradient(180deg, rgba(214,31,42,.9), rgba(214,31,42,.55));
+      box-shadow: 0 12px 30px rgba(214,31,42,.22);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .brand b{letter-spacing:.8px}
+    .brand small{display:block; color:var(--muted); font-weight:600; margin-top:2px}
+
+    .navlinks{display:flex; align-items:center; gap: 14px;}
+    .navlinks a{
+      text-decoration:none;
+      color:rgba(243,245,247,.88);
+      font-weight:700;
+      padding: 10px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.04);}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration:none;
+      font-weight: 900;
+      letter-spacing:.3px;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18);}
+    .btn:active{transform: translateY(1px);}
+    .btn.primary{
+      border-color: rgba(214,31,42,.55);
+      background: linear-gradient(180deg, rgba(214,31,42,.98), rgba(214,31,42,.62));
+      box-shadow: 0 16px 45px rgba(214,31,42,.20);
+    }
+    .btn.primary:hover{filter: brightness(1.02);}
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.14);
+    }
+    .btn.small{padding:10px 12px; border-radius: 12px; font-weight:900;}
+    .kbd{
+      font-size:12px; font-weight:900; color:rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.16);
+      border-bottom-color: rgba(255,255,255,.10);
+      padding: 3px 8px; border-radius: 10px;
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Mobile nav */
+    .menuToggle{display:none}
+    .hamburger{
+      display:none;
+      width:44px; height:44px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      align-items:center; justify-content:center;
+    }
+    .hamburger span{
+      width:18px; height:2px; background: rgba(255,255,255,.86);
+      display:block; position:relative;
+    }
+    .hamburger span:before,.hamburger span:after{
+      content:""; position:absolute; left:0; width:18px; height:2px;
+      background: rgba(255,255,255,.86);
+    }
+    .hamburger span:before{top:-6px}
+    .hamburger span:after{top:6px}
+
+    @media (max-width: 860px){
+      .hamburger{display:flex}
+      .navlinks{display:none}
+      .menuToggle:checked ~ .nav .navlinks{
+        display:flex;
+        position:absolute;
+        left:18px; right:18px; top:64px;
+        flex-direction: column;
+        background: rgba(11,12,15,.95);
+        border:1px solid rgba(255,255,255,.12);
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+      }
+      .brand{min-width: unset}
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      padding: var(--space-8) 0 var(--space-7);
+      overflow:hidden;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: var(--space-6);
+      align-items: center;
+    }
+    .badgeRow{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom: 14px;}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: rgba(243,245,247,.90);
+      font-weight: 900;
+      letter-spacing:.25px;
+      font-size: 12px;
+    }
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--accent); box-shadow: 0 0 0 4px rgba(214,31,42,.18);}
+    .hero h1{
+      margin: 0 0 12px;
+      font-size: clamp(34px, 4.2vw, 54px);
+      line-height: 1.05;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+    .hero p{
+      margin: 0 0 18px;
+      color: rgba(167,176,189,.95);
+      font-size: 16px;
+      max-width: 56ch;
+      font-weight:700;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top: 18px;}
+    .micro{
+      margin-top: 10px;
+      color: rgba(167,176,189,.95);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .micro b{color: rgba(243,245,247,.92)}
+    .heroCard{
+      position:relative;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      min-height: 360px;
+    }
+    .heroMedia{
+      position:absolute; inset:0;
+      background-image: var(--hero-image);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .heroOverlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(11,12,15,.10), rgba(11,12,15,.70) 72%, rgba(11,12,15,.92)),
+        radial-gradient(520px 280px at 20% 18%, rgba(214,31,42,.22), transparent 55%);
+    }
+    .heroPanel{
+      position:absolute; left:16px; right:16px; bottom:16px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,12,15,.72);
+      backdrop-filter: blur(10px);
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .heroPanel .k{
+      font-size: 12px; color: rgba(167,176,189,.95); font-weight: 900; letter-spacing:.3px;
+      text-transform: uppercase;
+    }
+    .heroPanel .v{
+      font-size: 16px; font-weight: 1000; letter-spacing:.2px;
+    }
+    .heroPanel .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 9px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      font-weight: 900;
+      color: rgba(243,245,247,.92);
+    }
+    .chip .pin{width:10px;height:10px;border-radius:99px;background:var(--accent)}
+    .chip .mini{color: rgba(167,176,189,.95); font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing:.25px}
+
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr; gap: 22px;}
+      .heroCard{min-height: 340px;}
+    }
+    <section id="inventory" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Inventory</h2>
+      <p class="muted">Tap a product to message and lock it in. Pricing + images come from <code>data.json</code>.</p>
+    </div>
+
+    <div id="productGrid" class="grid"></div>
+
+    <div id="productEmpty" class="empty" hidden>
+      <p><strong>No products found.</strong> Add items inside <code>data.json</code> → <code>products</code>.</p>
+    </div>
+  </div>
+</section>
+
+    /* Sections */
+    section{padding: var(--space-7) 0;}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 16px; flex-wrap:wrap;
+      margin-bottom: 16px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size: clamp(20px, 2.6vw, 30px);
+      letter-spacing:.6px;
+      text-transform: uppercase;
+    }
+    .sectionTitle p{
+      margin:0;
+      color: rgba(167,176,189,.95);
+      font-weight: 700;
+      max-width: 70ch;
+    }
+
+    /* Authority band */
+    .band{
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 260px at 20% 0%, rgba(214,31,42,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      padding: var(--space-6) 0;
+    }
+    .bandGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .band h3{
+      margin:0 0 10px;
+      text-transform: uppercase;
+      letter-spacing:.8px;
+      font-size: clamp(18px, 2.3vw, 26px);
+    }
+    .band .lead{
+      margin:0;
+      color: rgba(243,245,247,.88);
+      font-weight: 800;
+    }
+    .band .sub{
+      margin: 10px 0 0;
+      color: rgba(167,176,189,.95);
+      font-weight: 700;
+    }
+    .bullets{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .bullet{
+      display:flex; align-items:flex-start; gap:10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,12,15,.38);
+    }
+    .check{
+      width:22px; height:22px; border-radius: 10px;
+      background: rgba(214,31,42,.18);
+      border:1px solid rgba(214,31,42,.30);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      margin-top: 1px;
+    }
+    .check svg{width:14px;height:14px; fill: var(--accent2)}
+    .bullet b{display:block; text-transform: uppercase; letter-spacing:.4px}
+    .bullet span{display:block; color: rgba(167,176,189,.95); font-weight:700; margin-top: 4px; font-size: 13px;}
+    @media (max-width: 980px){
+      .bandGrid{grid-template-columns: 1fr;}
+      .bullets{grid-template-columns: 1fr;}
+    }
+
+    /* Deal of week */
+    .deal{
+      border-radius: 22px;
+      border:1px solid rgba(214,31,42,.35);
+      background:
+        radial-gradient(900px 320px at 10% 0%, rgba(214,31,42,.22), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: 0 24px 70px rgba(214,31,42,.12);
+      overflow:hidden;
+    }
+    .dealInner{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 18px;
+      padding: 18px;
+      align-items: stretch;
+    }
+    .dealMedia{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.35);
+      min-height: 260px;
+      overflow:hidden;
+      position:relative;
+    }
+    .dealMedia img{
+      width:100%; height:100%; object-fit: cover; display:block;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .dealTag{
+      position:absolute; left: 14px; top: 14px;
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(11,12,15,.72);
+      backdrop-filter: blur(10px);
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing:.35px;
+      font-size: 12px;
+    }
+    .dealTag .flame{
+      width:10px;height:10px;border-radius:99px;background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(214,31,42,.18);
+    }
+    .dealContent{
+      padding: 8px 6px;
+      display:flex; flex-direction:column; gap: 10px;
+    }
+    .dealContent h3{
+      margin:0;
+      font-size: clamp(18px, 2.4vw, 26px);
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing:.8px;
+    }
+    .dealMeta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      color: rgba(167,176,189,.95);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing:.3px;
+      font-size: 12px;
+    }
+    .priceRow{
+      display:flex; align-items:baseline; gap: 12px; flex-wrap:wrap;
+      margin-top: 4px;
+    }
+    .priceRow .retail{
+      color: rgba(167,176,189,.90);
+      text-decoration: line-through;
+      font-weight: 900;
+      letter-spacing:.3px;
+    }
+    .priceRow .now{
+      font-size: 34px;
+      font-weight: 1100;
+      letter-spacing:.2px;
+      color: #fff;
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+    .priceRow .now small{font-size: 14px; font-weight: 900; color: rgba(255,255,255,.85); margin-left:6px;}
+    .dealNote{
+      margin:0;
+      color: rgba(167,176,189,.95);
+      font-weight: 800;
+    }
+    .dealCtas{display:flex; gap: 12px; flex-wrap:wrap; margin-top: 6px;}
+    @media (max-width: 980px){
+      .dealInner{grid-template-columns: 1fr;}
+      .dealMedia{min-height: 220px;}
+    }
+
+    /* Inventory */
+    .controls{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+      margin: 12px 0 18px;
+    }
+    .search{
+      flex: 1 1 260px;
+      display:flex; align-items:center; gap:10px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 12px 12px;
+    }
+    .search input{
+      width:100%;
+      background: transparent;
+      border:0;
+      outline:none;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing:.2px;
+      font-size: 14px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-weight: 900;
+      color: rgba(243,245,247,.90);
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill input{accent-color: var(--accent); width: 16px; height: 16px;}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 620px){ .grid{grid-template-columns: 1fr;} }
+
+    .card{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      overflow:hidden;
+      box-shadow: 0 16px 50px rgba(0,0,0,.35);
+      display:flex; flex-direction:column;
+      min-height: 360px;
+      position:relative;
+    }
+    .card .img{
+      aspect-ratio: 16/10;
+      background: rgba(0,0,0,.30);
+      overflow:hidden;
+    }
+    .card .img img{width:100%; height:100%; object-fit:cover; display:block;}
+    .card .body{padding: 14px 14px; display:flex; flex-direction:column; gap: 10px; flex:1;}
+    .card h4{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing:.5px;
+    }
+    .metaRow{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      color: rgba(167,176,189,.95);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing:.25px;
+      font-size: 12px;
+    }
+    .price{
+      display:flex; align-items:baseline; gap: 10px; flex-wrap:wrap;
+      margin-top: 2px;
+    }
+    .price .now{
+      font-size: 24px; font-weight: 1100;
+    }
+    .price .retail{
+      color: rgba(167,176,189,.90);
+      text-decoration: line-through;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .status{
+      display:inline-flex; align-items:center; gap:8px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing:.35px;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .status .sDot{width:9px;height:9px;border-radius:99px;background: var(--ok); box-shadow: 0 0 0 4px rgba(56,214,138,.16);}
+    .status.sold .sDot{background: rgba(255,255,255,.25); box-shadow: none;}
+    .card .actions{
+      padding: 0 14px 14px;
+      display:flex; gap: 10px; flex-wrap:wrap;
+    }
+    .card.soldOut{
+      opacity: .62;
+      filter: grayscale(.12);
+    }
+    .soldRibbon{
+      position:absolute; top:12px; right:12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(11,12,15,.75);
+      border:1px solid rgba(255,255,255,.14);
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing:.35px;
+      font-size: 12px;
+    }
+    .soldRibbon b{color: rgba(255,255,255,.85)}
+    .empty{
+      margin-top: 10px;
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: 18px;
+      padding: 18px;
+      color: rgba(167,176,189,.95);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing:.4px;
+    }
+
+    /* Pickup CTA band */
+    .ctaBand{
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(820px 280px at 80% 0%, rgba(214,31,42,.22), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .ctaBandInner{
+      display:flex; align-items:center; justify-content:space-between; gap: 14px; flex-wrap:wrap;
+      padding: var(--space-6) 0;
+    }
+    .ctaBandInner h3{
+      margin:0;
+      text-transform: uppercase;
+      letter-spacing:.8px;
+      font-size: clamp(18px, 2.5vw, 28px);
+    }
+    .ctaBandInner p{
+      margin: 8px 0 0;
+      color: rgba(167,176,189,.95);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing:.35px;
+      font-size: 12px;
+    }
+
+    footer{
+      padding: var(--space-6) 0;
+      color: rgba(167,176,189,.95);
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    footer .fgrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+    }
+    footer a{color: rgba(243,245,247,.88)}
+    @media (max-width: 860px){ footer .fgrid{grid-template-columns: 1fr;} }
+
+    /* Focus states */
+    :focus-visible{
+      outline: 2px solid rgba(214,31,42,.75);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
+    /* Mobile sticky call/text bar */
+    .stickyBar{
+      position: fixed;
+      left: 12px; right: 12px; bottom: 12px;
+      display:none;
+      gap: 10px;
+      z-index: 60;
+    }
+    .stickyBar a{
+      flex:1;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+    @media (max-width: 720px){
+      .stickyBar{display:flex;}
+      body{padding-bottom: 76px;}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="topbar">
+    <div class="wrap">
+      <input id="menuToggle" class="menuToggle" type="checkbox" aria-hidden="true" />
+      <div class="nav">
+        <div class="brand" aria-label="JR Tools USA">
+          <div class="logoMark" aria-hidden="true"></div>
+          <div>
+            <b>JR TOOLS USA</b>
+            <small>Alpharetta Pickup • Call/Text <span id="phoneInline">(404) 565-7099</span></small>
+          </div>
+        </div>
+
+        <label class="hamburger" for="menuToggle" aria-label="Open menu">
+          <span aria-hidden="true"></span>
+        </label>
+
+        <nav class="navlinks" aria-label="Primary navigation">
+          <a href="#inventory">Inventory</a>
+          <a href="#deal">Deal</a>
+          <a href="#pickup">Pickup</a>
+          <a href="es.html" class="btn small ghost" aria-label="View Spanish version">ES</a>
+          <a href="tel:+14045657099" class="btn small primary" aria-label="Call JR Tools USA">(404) 565-7099</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div>
+          <div class="badgeRow">
+            <span class="badge"><span class="dot" aria-hidden="true"></span> LOCAL PICKUP • ALPHARETTA, GA</span>
+            <span class="badge">INVENTORY UPDATES WEEKLY</span>
+            <span class="badge">NO RETAIL MARKUP</span>
+          </div>
+
+          <h1>PRO TOOLS.<br/>REAL PRICES.</h1>
+          <p>
+            Pro-grade tools without big-box markup. First come, first served.
+            Message to lock in today’s price and pickup time.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="#inventory" aria-label="View inventory">View Inventory</a>
+            <a class="btn" href="sms:+14045657099?&body=JR%20Tools%20USA%20—%20I%20want%20to%20lock%20in%20a%20tool%20pickup%20today.%20Is%20it%20available%3F" aria-label="Text JR Tools USA">Text to Lock It In <span class="kbd">SMS</span></a>
+            <a class="btn ghost" href="#deal" aria-label="View deal of the week">Deal of the Week</a>
+          </div>
+
+          <div class="micro">
+            <b>Pickup City:</b> Alpharetta, GA • <b>Phone:</b> (404) 565-7099 • <b>Languages:</b> English / Español
+          </div>
+        </div>
+
+        <div class="heroCard" aria-label="Hero image">
+          <div class="heroMedia" aria-hidden="true"></div>
+          <div class="heroOverlay" aria-hidden="true"></div>
+
+          <div class="heroPanel">
+            <div>
+              <div class="k">Today’s Status</div>
+              <div class="v">Ready for Pickup</div>
+            </div>
+            <div class="chip" title="Pickup location">
+              <span class="pin" aria-hidden="true"></span>
+              <div>
+                <div class="mini">Pickup</div>
+                Alpharetta, GA
+              </div>
+            </div>
+            <a class="btn small primary" href="tel:+14045657099" aria-label="Call now">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Authority band -->
+  <div class="band">
+    <div class="wrap">
+      <div class="bandGrid">
+        <div>
+          <h3>PRO-GRADE TOOLS. NO RETAIL MARKUP.</h3>
+          <p class="lead">Local pickup, real inventory, fast response.</p>
+          <p class="sub">Inventory rotates weekly. When it’s gone, it’s gone.</p>
+        </div>
+
+        <div class="bullets" aria-label="Reasons to buy from JR Tools USA">
+          <div class="bullet">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.7-1.7 2.6 2.6 8-8 1.7 1.7z"/></svg>
+            </div>
+            <div>
+              <b>Below Big-Box Pricing</b>
+              <span>Real deals without the markup.</span>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.7-1.7 2.6 2.6 8-8 1.7 1.7z"/></svg>
+            </div>
+            <div>
+              <b>Real Inventory</b>
+              <span>No backorders. No waiting.</span>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.7-1.7 2.6 2.6 8-8 1.7 1.7z"/></svg>
+            </div>
+            <div>
+              <b>Fast Response</b>
+              <span>Call/text to lock it in.</span>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.7-1.7 2.6 2.6 8-8 1.7 1.7z"/></svg>
+            </div>
+            <div>
+              <b>Same-Day Pickup</b>
+              <span>Alpharetta pickup available.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Deal of the week -->
+    <section id="deal">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>Deal of the Week</h2>
+            <p>Limited local inventory — first come, first served. Text to lock it in.</p>
+          </div>
+        </div>
+
+        <div class="deal" role="region" aria-label="Deal of the week">
+          <div class="dealInner">
+            <div class="dealMedia">
+              <div class="dealTag"><span class="flame" aria-hidden="true"></span> DEAL OF THE WEEK</div>
+              <img id="dealImg" src="images/deal.jpg" alt="Deal of the week product image" onerror="this.src='images/placeholder.jpg'; this.alt='Product image placeholder';" />
+            </div>
+
+            <div class="dealContent">
+              <h3 id="dealTitle">DeWalt 20V XR Impact Kit</h3>
+              <div class="dealMeta">
+                <span id="dealPickup">Pickup: Alpharetta, GA</span>
+                <span id="dealStock">Limited Stock</span>
+              </div>
+
+              <div class="priceRow" aria-label="Deal pricing">
+                <span class="retail" id="dealRetail">$279</span>
+                <span class="now" id="dealNow">$229 <small>today</small></span>
+              </div>
+
+              <p class="dealNote" id="dealNote">Text “LOCK IT IN” to confirm availability and pickup time.</p>
+
+              <div class="dealCtas">
+                <a class="btn primary" id="dealTextBtn" href="sms:+14045657099?&body=JR%20Tools%20USA%20—%20LOCK%20IT%20IN.%20Is%20the%20Deal%20of%20the%20Week%20available%3F" aria-label="Text to claim the deal">Text to Claim Deal</a>
+                <a class="btn" href="tel:+14045657099" aria-label="Call about the deal">Call Now</a>
+                <a class="btn ghost" href="#inventory" aria-label="Scroll to inventory">View All Inventory</a>
+              </div>
+
+              <div class="micro">
+                <b>Tip:</b> Want this to be dynamic? Add <b>dealOfWeek</b> to a product in <b>data.json</b> and we’ll auto-populate.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inventory -->
+    <section id="inventory">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>Inventory</h2>
+            <p>Browse what’s available. Sold items stay visible (greyed out) so buyers trust the feed.</p>
+          </div>
+        </div>
+
+        <div id="productGrid" class="grid"></div>
+<div id="bundleGrid" class="grid"></div>
+
+<div id="productEmpty" class="empty" hidden>
+  <p><strong>No products found.</strong> Add items in <code>data.json</code>.</p>
+</div>
+<div id="bundleEmpty" class="empty" hidden>
+  <p><strong>No bundles found.</strong> Add bundles in <code>data.json</code>.</p>
+</div>
+
+        <div class="controls" aria-label="Inventory controls">
+          <div class="search" role="search" aria-label="Search inventory">
+            <span aria-hidden="true">🔎</span>
+            <input id="q" type="search" placeholder="Search tools… (brand, model, type)" autocomplete="off" />
+          </div>
+
+          <label class="pill" title="Show in-stock only">
+            <input id="inStockOnly" type="checkbox" />
+            In Stock Only
+          </label>
+
+          <a class="btn small ghost" href="es.html" aria-label="Spanish version">Español</a>
+          <a class="btn small primary" href="sms:+14045657099?&body=JR%20Tools%20USA%20—%20I%20want%20to%20buy.%20What%20do%20you%20have%20available%20today%3F" aria-label="Text for inventory">Text for Today’s Inventory</a>
+        </div>
+
+        <div id="grid" class="grid" aria-live="polite" aria-label="Inventory list"></div>
+        <div id="empty" class="empty" hidden>No results. Try a different search.</div>
+      </div>
+    </section>
+
+    <!-- Local Pickup CTA band -->
+    <div id="pickup" class="ctaBand">
+      <div class="wrap">
+        <div class="ctaBandInner">
+          <div>
+            <h3>LOCAL PICKUP • ALPHARETTA, GA</h3>
+            <p>NO SHIPPING • NO WAITING • FIRST COME, FIRST SERVED</p>
+          </div>
+          <div class="ctaRow">
+            <a class="btn primary" href="tel:+14045657099" aria-label="Call JR Tools USA">(404) 565-7099</a>
+            <a class="btn" href="sms:+14045657099?&body=JR%20Tools%20USA%20—%20I%20want%20pickup%20in%20Alpharetta%20today.%20What%27s%20available%3F" aria-label="Text JR Tools USA">Text for Pickup</a>
+            <a class="btn ghost" href="#inventory" aria-label="Back to inventory">Back to Inventory</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="fgrid">
+          <div>
+            <b style="letter-spacing:.8px;">JR TOOLS USA</b>
+            <div style="margin-top:8px; font-weight:800;">
+              Pro Tools. Real Prices. Local pickup in Alpharetta, GA.
+            </div>
+            <div style="margin-top:10px;">
+              Call/Text: <a href="tel:+14045657099">(404) 565-7099</a> • Spanish: <a href="es.html">es.html</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-weight:1000; text-transform:uppercase; letter-spacing:.35px;">Quick Links</div>
+            <div style="margin-top:10px; display:flex; flex-direction:column; gap:8px;">
+              <a href="#deal">Deal of the Week</a>
+              <a href="#inventory">Inventory</a>
+              <a href="#pickup">Pickup</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px; color: rgba(167,176,189,.85); font-weight:700;">
+          © <span id="y"></span> JR Tools USA • Built for local pickup operations • Powered by GitHub + Vercel
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Mobile sticky bar -->
+  <div class="stickyBar" aria-label="Quick actions">
+    <a class="btn primary" href="tel:+14045657099" aria-label="Call JR Tools USA now">Call Now</a>
+    <a class="btn" href="sms:+14045657099?&body=JR%20Tools%20USA%20—%20I%20want%20to%20lock%20in%20a%20tool%20pickup%20today.%20Is%20it%20available%3F" aria-label="Text JR Tools USA now">Text Now</a>
+  </div>
+
+  <script>
+    // ====== SETTINGS (edit once) ======
+    const PHONE_DISPLAY = "(404) 565-7099";
+    const PHONE_TEL = "+14045657099"; // keep digits only for tel/sms
+    const PICKUP_CITY = "Alpharetta, GA";
+    const DATA_URL = "data.json";
+
+    // ====== Helpers ======
+    const $ = (s) => document.querySelector(s);
+    const esc = (str="") => String(str).replace(/[&<>"']/g, m => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+    }[m]));
+    const money = (n) => {
+      const num = Number(n);
+      if (Number.isFinite(num)) return "$" + num.toFixed(0);
+      return n ? String(n) : "";
+    };
+    const normalize = (v) => (v ?? "").toString().trim().toLowerCase();
+
+    // ====== Wiring phone in UI ======
+    $("#phoneInline").textContent = PHONE_DISPLAY;
+    $("#y").textContent = new Date().getFullYear();
+
+    // ====== Inventory rendering ======
+    let allProducts = [];
+
+    function productIsInStock(p){
+      // Accept multiple schemas:
+      // - p.inStock: boolean
+      // - p.status: "In Stock" / "Sold Out"
+      // - p.availability: "In Stock" / "Sold Out"
+      // - p.stock: number
+      if (typeof p?.inStock === "boolean") return p.inStock;
+      const status = normalize(p?.status || p?.availability);
+      if (status.includes("sold")) return false;
+      if (status.includes("out")) return false;
+      if (status.includes("in")) return true;
+      const stockNum = Number(p?.stock);
+      if (Number.isFinite(stockNum)) return stockNum > 0;
+      // default: treat unknown as in stock
+      return true;
+    }
+
+    function getImage(p){
+      // Accept: image, imageUrl, photo, heroImage, etc.
+      return p?.image || p?.imageUrl || p?.photo || p?.img || "images/placeholder.jpg";
+    }
+
+    function getTitle(p){
+      return p?.name || p?.title || p?.product || "Tool";
+    }
+
+    function getBrand(p){
+      return p?.brand || p?.make || "";
+    }
+
+    function getCategory(p){
+      return p?.category || p?.type || "";
+    }
+
+    function getRetail(p){
+      return p?.retail || p?.msrp || p?.retailPrice || "";
+    }
+
+    function getPrice(p){
+      return p?.price || p?.sale || p?.salePrice || p?.yourPrice || "";
+    }
+
+    function getSku(p){
+      return p?.sku || p?.id || p?.code || "";
+    }
+
+    function cardHTML(p){
+      const title = getTitle(p);
+      const brand = getBrand(p);
+      const category = getCategory(p);
+      const sku = getSku(p);
+      const retail = getRetail(p);
+      const price = getPrice(p);
+      const inStock = productIsInStock(p);
+
+      const img = getImage(p);
+      const statusText = inStock ? "In Stock" : "Sold Out";
+
+      const msg = encodeURIComponent(`JR Tools USA — Is this available?\n\n${title}${brand ? " ("+brand+")" : ""}\nPrice: ${money(price)}${retail ? " (Retail: "+money(retail)+")" : ""}\nPickup: ${PICKUP_CITY}${sku ? "\nSKU: "+sku : ""}`);
+      const smsHref = `sms:${PHONE_TEL}?&body=${msg}`;
+
+      return `
+        <article class="card ${inStock ? "" : "soldOut"}" data-title="${esc(normalize(title + " " + brand + " " + category + " " + sku))}" data-instock="${inStock ? "1":"0"}">
+          ${inStock ? "" : `<div class="soldRibbon"><b>Sold</b> Out</div>`}
+          <div class="img">
+            <img src="${esc(img)}" alt="${esc(title)}" onerror="this.src='images/placeholder.jpg';" />
+          </div>
+          <div class="body">
+            <h4>${esc(title)}</h4>
+            <div class="metaRow">
+              ${brand ? `<span>${esc(brand)}</span>` : ""}
+              ${category ? `<span>${esc(category)}</span>` : ""}
+              ${sku ? `<span>SKU ${esc(sku)}</span>` : ""}
+              <span>Pickup ${esc(PICKUP_CITY)}</span>
+            </div>
+            <div class="price">
+              <span class="now">${esc(money(price))}</span>
+              ${retail ? `<span class="retail">${esc(money(retail))}</span>` : ""}
+            </div>
+            <div class="status ${inStock ? "" : "sold"}">
+              <span class="sDot" aria-hidden="true"></span>
+              <span>${statusText}</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn small primary" href="${smsHref}" aria-label="Text about ${esc(title)}">Text</a>
+            <a class="btn small" href="tel:${PHONE_TEL}" aria-label="Call JR Tools USA">Call</a>
+            <a class="btn small ghost" href="#deal" aria-label="See deal of the week">Deal</a>
+          </div>
+        </article>
+      `;
+    }
+
+let allBundles = [];
+    function sortInventory(items) {
+  return items.sort((a, b) => {
+
+    // Pin Deal of Week
+    if (a.dealOfWeek) return -1;
+    if (b.dealOfWeek) return 1;
+
+    // In Stock first
+    const aSold = a.status === "Sold Out";
+    const bSold = b.status === "Sold Out";
+
+    if (aSold && !bSold) return 1;
+    if (!aSold && bSold) return -1;
+
+    return 0;
+  });
+}
+
+function render(list, gridEl, emptyEl, type) {
+  const items = Array.isArray(list) ? sortInventory(list) : [];
+  gridEl.innerHTML = items.map(it => makeCard(it, type)).join("");
+  emptyEl.hidden = items.length > 0;
+}
+
+    function applyFilters(){
+      const q = normalize($("#q").value);
+      const inStockOnly = $("#inStockOnly").checked;
+
+      const filtered = allProducts.filter(p => {
+        const hay = normalize(getTitle(p) + " " + getBrand(p) + " " + getCategory(p) + " " + getSku(p));
+        const matchesQ = !q || hay.includes(q);
+        const isStock = productIsInStock(p);
+        const matchesStock = !inStockOnly || isStock;
+        return matchesQ && matchesStock;
+      });
+
+      render(filtered);
+    }
+
+    // ====== Deal of the week auto-pick ======
+    function setDealFromProducts(products){
+      if (!Array.isArray(products) || products.length === 0) return;
+
+      // Prefer explicit flag:
+      // dealOfWeek: true OR featuredDeal: true
+      let deal = products.find(p => p?.dealOfWeek === true || p?.featuredDeal === true);
+
+      // Otherwise pick first in-stock item
+      if (!deal) deal = products.find(p => productIsInStock(p)) || products[0];
+
+      const title = getTitle(deal);
+      const retail = getRetail(deal);
+      const price = getPrice(deal);
+      const img = getImage(deal);
+
+      $("#dealTitle").textContent = title || "Deal of the Week";
+      $("#dealPickup").textContent = `Pickup: ${PICKUP_CITY}`;
+      $("#dealRetail").textContent = retail ? money(retail) : "";
+      $("#dealRetail").style.display = retail ? "inline" : "none";
+      $("#dealNow").innerHTML = `${esc(money(price))} <small>today</small>`;
+      $("#dealImg").src = img || "images/deal.jpg";
+      $("#dealStock").textContent = productIsInStock(deal) ? "Limited Stock" : "Sold (Ask for Similar)";
+
+      const msg = encodeURIComponent(`JR Tools USA — LOCK IT IN.\n\nDeal of the Week:\n${title}\nPrice: ${money(price)}${retail ? " (Retail: "+money(retail)+")" : ""}\nPickup: ${PICKUP_CITY}\n\nIs it available right now?`);
+      $("#dealTextBtn").href = `sms:${PHONE_TEL}?&body=${msg}`;
+    }
+
+   
+
+  
+(async function () {
+  const productGrid = document.getElementById("productGrid");
+  const bundleGrid  = document.getElementById("bundleGrid");
+  const productEmpty = document.getElementById("productEmpty");
+  const bundleEmpty  = document.getElementById("bundleEmpty");
+
+  // Basic safe escape
+  const esc = (s="") => String(s)
+    .replaceAll("&","&amp;").replaceAll("<","&lt;")
+    .replaceAll(">","&gt;").replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+  // Load JSON (cache-bust while developing)
+  async function loadData() {
+    const res = await fetch("./data.json?v=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to load data.json: " + res.status);
+    return res.json();
+  }
+
+  function makeCard(item, type) {
+    const name = esc(item.name || "");
+    const desc = esc(item.desc || "");
+    const img  = esc(item.img || "");
+    const price = Number(item.price || 0);
+    const status = esc(item.status || "In Stock");
+
+    // Your CTA message (customize)
+    const msg = type === "bundle"
+      ? `Hi! I want the bundle: ${name} ($${price}). Is it available for pickup?`
+      : `Hi! I want: ${name} ($${price}). Is it available for pickup?`;
+
+    // Put your real number here:
+    const phoneDigits = "4045657099"; // <- change if needed
+    const smsLink = `sms:${phoneDigits}?&body=${encodeURIComponent(msg)}`;
+
+    const soldOut = /sold\s*out/i.test(status);
+    return `
+      <article class="card ${soldOut ? "sold" : ""}">
+        <div class="media">
+          ${img ? `<img src="${img}" alt="${name}" loading="lazy">` : ""}
+          ${soldOut ? `<span class="badge">SOLD OUT</span>` : ""}
+        </div>
+        <div class="body">
+          <h3>${name}</h3>
+          <p class="sub">${desc}</p>
+          <div class="meta">
+            <div class="price">$${price}</div>
+            <div class="status">${status}</div>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="${smsLink}">Text to Lock It In</a>
+            <button class="btn" type="button" onclick="navigator.clipboard.writeText('${esc(msg)}')">
+              Copy Message
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function render(list, gridEl, emptyEl, type) {
+    const items = Array.isArray(list) ? list : [];
+    gridEl.innerHTML = items.map(it => makeCard(it, type)).join("");
+    const has = items.length > 0;
+    emptyEl.hidden = has;
+  }
+
+  try {
+    const cfg = await loadData();
+
+    console.log("CFG:", cfg);
+console.log("Products:", cfg.products?.length);
+allProducts = cfg.products || [];
+allBundles = cfg.bundles || [];
+
+render(allProducts, productGrid, productEmpty, "product");
+render(allBundles, bundleGrid, bundleEmpty, "bundle");
+  } catch (err) {
+    console.error(err);
+    productGrid.innerHTML = `<div class="empty"><strong>Error:</strong> ${esc(err.message)}</div>`;
+  }
+})();
+</script>
+</body>
+</html>
