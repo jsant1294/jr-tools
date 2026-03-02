@@ -1,0 +1,124 @@
+{
+  "brand": "JR Tools USA",
+  "logoText": "JR Tools USA",
+  "pickup": "Alpharetta, GA",
+  "whatsapp": "14045657099",
+  "heroImage": "images/hero.jpg",
+  "theme": {
+    "accent": "#ffd400",
+    "accent2": "#ffb000",
+    "bg": "#0b0d10",
+    "bg2": "#0f1319",
+    "card": "#111823"
+  },
+  "labels": {
+    "en": {
+      "promo": "Limited inventory — updated weekly. Fast pickups in {pickup}.",
+      "promoBtn": "See what’s in stock",
+      "navInventory": "Inventory",
+      "navBundles": "Bundles",
+      "navPickup": "Pickup",
+      "navLang": "ES",
+      "navOrder": "Order",
+      "headline": "Pro Tools. Real Prices.",
+      "subhead": "Hybrid storefront built by me. {pickup} pickup. Transparent pricing. Message to lock it in.",
+      "primaryCta": "View Inventory",
+      "inventoryTitle": "Featured Inventory",
+      "inventoryNote": "Tap any product to message and lock it in. Images + pricing come from data.json.",
+      "bundlesTitle": "Bundle Deals",
+      "bundlesNote": "Save more when you grab a set. Bundles also come from data.json.",
+      "pickupTitle": "Pickup Area",
+      "pickupNote": "Meet-up by appointment. Exact spot shared after confirmation.",
+      "statusLabel": "Status",
+      "dealLabel": "Deal",
+      "orderThis": "Order this",
+      "checkAvailability": "Check availability",
+      "claimBundle": "Claim bundle",
+      "messageOrder": "Message to Order"
+    },
+    "es": {
+      "promo": "Inventario limitado — actualizado semanalmente. Recogida rápida en {pickup}.",
+      "promoBtn": "Ver disponibles",
+      "navInventory": "Inventario",
+      "navBundles": "Paquetes",
+      "navPickup": "Recogida",
+      "navLang": "EN",
+      "navOrder": "Ordenar",
+      "headline": "Herramientas Pro. Precios Reales.",
+      "subhead": "Tienda híbrida creada por mí. Recogida en {pickup}. Precios claros. Envíanos mensaje para apartar.",
+      "primaryCta": "Ver Inventario",
+      "inventoryTitle": "Inventario Destacado",
+      "inventoryNote": "Toca cualquier producto para mandar mensaje y apartarlo. Imágenes y precios salen de data.json.",
+      "bundlesTitle": "Paquetes (Bundles)",
+      "bundlesNote": "Ahorra más comprando en paquete. Los paquetes también salen de data.json.",
+      "pickupTitle": "Área de Recogida",
+      "pickupNote": "Cita previa. Compartimos el punto exacto después de confirmar.",
+      "statusLabel": "Estado",
+      "dealLabel": "Oferta",
+      "orderThis": "Ordenar",
+      "checkAvailability": "Confirmar",
+      "claimBundle": "Apartar paquete",
+      "messageOrder": "Enviar mensaje"
+    }
+  },
+  "products": [
+    {
+      "name": "20V Impact Driver Kit",
+      "desc": "2 batteries + charger included",
+      "price": 129,
+      "status": "Sold Out",
+      "img": "images/impact.jpg"
+    },
+    {
+      "name": "Brushless Hammer Drill",
+      "desc": "Tool only • heavy-duty",
+      "price": 123,
+      "status": "In Stock",
+      "img": "images/drill.jpg"
+    },
+    {
+      "name": "2-Pack High Output Batteries",
+      "desc": "High capacity • long runtime",
+      "price": 119,
+      "status": "In Stock",
+      "img": "images/battery.jpg"
+    },
+    {
+      "name": "Cordless Angle Grinder",
+      "desc": "Tool only • guard included",
+      "price": 89,
+      "status": "In Stock",
+      "img": "images/grinder.jpg"
+    },
+    {
+      "name": "Compact Work Light",
+      "desc": "Bright LED • magnetic base",
+      "price": 29,
+      "status": "In Stock",
+      "img": "images/light.jpg"
+    },
+    {
+      "name": "Socket Set (Metric/SAE)",
+      "desc": "3/8\" drive • case included",
+      "price": 59,
+      "status": "In Stock",
+      "img": "images/sockets.jpg"
+    }
+  ],
+  "bundles": [
+    {
+      "name": "Starter Combo: Drill + Impact",
+      "desc": "Best value for daily jobs",
+      "price": 199,
+      "status": "Bundle",
+      "img": "images/bundle1.jpg"
+    },
+    {
+      "name": "Battery Pack: 2 HO + Charger",
+      "desc": "Keep your tools running",
+      "price": 149,
+      "status": "Bundle",
+      "img": "images/bundle2.jpg"
+    }
+  ]
+}

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>JR Tools USA — Herramientas Pro. Precios Reales.</title>
+  <meta name="description" content="JR Tools USA — tienda híbrida. Recogida en Alpharetta, GA. Precios claros. Envía mensaje para apartar." />
+
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --bg2:#0f1319;
+      --text:#f2f4f7;
+      --muted:#aab2bf;
+      --card:#111823;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --accent:#ffd400;
+      --accent2:#ffb000;
+
+      --max:1120px;
+      --r:18px;
+
+      --h1:clamp(34px,4vw,52px);
+      --h2:clamp(22px,2.2vw,30px);
+      --h3:18px;
+      --p:14px;
+
+      --s1:8px;
+      --s2:12px;
+      --s3:16px;
+      --s4:24px;
+      --s5:32px;
+      --s6:48px;
+      --s7:72px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(255,212,0,.12), transparent 55%),
+        radial-gradient(900px 600px at 80% 10%, rgba(255,176,0,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    .skip{
+      position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden
+    }
+    .skip:focus{
+      left:12px;top:12px;width:auto;height:auto;z-index:9999;
+      background:#000;padding:10px 12px;border-radius:10px;border:1px solid var(--border)
+    }
+
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(10,12,16,.65);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .promo{
+      font-size:12px;
+      color:rgba(255,255,255,.78);
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,212,0,.25);
+      color:var(--accent);
+      background:rgba(255,212,0,.08);
+      padding:8px 12px;border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:12px;
+      transition:transform .12s ease, background .12s ease;
+      flex:0 0 auto;
+    }
+    .pill:hover{transform:translateY(-1px);background:rgba(255,212,0,.12)}
+    .pill:focus{outline:3px solid rgba(255,212,0,.25);outline-offset:2px}
+
+    header{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px 0;
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;letter-spacing:.3px;
+    }
+    .dot{
+      width:14px;height:14px;border-radius:4px;background:var(--accent);
+      box-shadow:0 0 0 4px rgba(255,212,0,.10);
+    }
+    .navlinks{
+      display:flex;gap:18px;align-items:center;
+      color:rgba(255,255,255,.75);
+      font-size:13px;
+    }
+    .navlinks a{
+      text-decoration:none;
+      padding:8px 10px;border-radius:10px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+    .navlinks a:focus{outline:3px solid rgba(255,212,0,.25);outline-offset:2px}
+
+    .ctaRow{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:11px 14px;border-radius:12px;
+      font-weight:900;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      text-decoration:none;
+      cursor:pointer;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+    .btn:focus{outline:3px solid rgba(255,212,0,.25);outline-offset:2px}
+    .btn.primary{
+      background:linear-gradient(180deg, var(--accent), var(--accent2));
+      color:#1a1400;
+      border-color:rgba(0,0,0,.25);
+      box-shadow:0 12px 34px rgba(255,212,0,.14);
+    }
+    .btn.primary:hover{background:linear-gradient(180deg, #ffe066, #ffc24d)}
+    .btn.small{padding:10px 12px;font-weight:800;font-size:13px;border-radius:12px}
+
+    .hero{
+      margin-top:18px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.55)),
+        radial-gradient(800px 400px at 20% 20%, rgba(255,212,0,.10), transparent 60%),
+        #0b0d10;
+      position:relative;
+      min-height:260px;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(700px 240px at 80% 0%, rgba(255,212,0,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .heroInner{
+      position:relative;z-index:2;
+      padding:30px 26px;
+      display:grid;
+      gap:14px;
+      max-width:820px;
+    }
+    h1{margin:0;font-size:var(--h1);line-height:1.06}
+    .subhead{
+      margin:0;
+      color:rgba(255,255,255,.78);
+      font-size:14px;
+      line-height:1.5;
+      max-width:58ch;
+    }
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{
+      font-size:12px;
+      color:rgba(255,255,255,.75);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.25);
+      padding:8px 10px;border-radius:999px;
+      display:inline-flex;gap:8px;align-items:center;
+    }
+
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:var(--s6) 18px var(--s7);
+    }
+
+    section{padding:var(--s5) 0}
+    h2{margin:0 0 6px;font-size:var(--h2)}
+    .sectionNote{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:16px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .navlinks{display:none}
+    }
+    @media (max-width: 620px){
+      .grid{grid-template-columns:1fr}
+      .heroInner{padding:24px 18px}
+      .topbar .inner{padding:10px 12px}
+      header{padding:18px 12px 0}
+      main{padding:32px 12px 70px}
+    }
+
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow:0 12px 40px rgba(0,0,0,.35);
+      position:relative;
+    }
+    .thumb{
+      height:170px;
+      background:rgba(255,255,255,.03);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      background:#0f1319;
+    }
+    .cardBody{padding:14px}
+    .name{margin:0 0 4px;font-weight:900;letter-spacing:.2px}
+    .desc{margin:0;color:var(--muted);font-size:13px;min-height:18px}
+    .priceRow{
+      margin-top:10px;
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .price{font-size:18px;font-weight:900}
+    .meta{color:var(--muted);font-size:12px}
+    .statusColor{font-weight:900}
+    .cardActions{
+      padding:0 14px 14px;
+      display:flex;
+      gap:10px;
+    }
+
+    /* SOLD OUT STYLE */
+    .card.sold-out{
+      opacity:.45;
+      filter:grayscale(100%);
+    }
+    .card.sold-out::after{
+      content:"AGOTADO";
+      position:absolute;
+      top:12px; right:12px;
+      background:#ffb300;
+      color:#1a1400;
+      font-size:12px;
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      letter-spacing:.6px;
+      border:1px solid rgba(0,0,0,.18);
+      box-shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+
+    .panel{
+      margin-top:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius:18px;
+      padding:16px;
+    }
+    .panel p{margin:0;color:rgba(255,255,255,.82);font-size:13px;line-height:1.5}
+    .panel .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+    footer{
+      margin-top:26px;
+      padding:12px 0 0;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <div class="topbar">
+    <div class="inner">
+      <div class="promo" id="promoText">Inventario limitado — actualizado semanalmente. Recogida rápida en Alpharetta, GA.</div>
+      <a class="pill" id="promoBtn" href="#inventory" aria-label="Ver disponibles">Ver disponibles</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav">
+      <div class="brand" aria-label="JR Tools USA">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="brandText">JR Tools USA</span>
+      </div>
+
+      <nav class="navlinks" aria-label="Navegación">
+        <a href="#inventory" id="navInventory">Inventario</a>
+        <a href="#bundles" id="navBundles">Paquetes</a>
+        <a href="#pickup" id="navPickup">Recogida</a>
+        <a href="index.html" id="navLang" title="Switch to English">EN</a>
+      </nav>
+
+      <div class="ctaRow">
+        <a class="btn small" href="index.html" aria-label="Switch to English">EN</a>
+        <a class="btn primary small" id="orderBtnTop" href="#pickup">Ordenar</a>
+      </div>
+    </div>
+
+    <div class="hero" id="heroBg" role="region" aria-label="Sección principal">
+      <div class="heroInner">
+        <h1 id="headline">Herramientas Pro. Precios Reales.</h1>
+        <p class="subhead" id="subhead">
+          Tienda híbrida creada por mí. Recogida en Alpharetta, GA. Precios claros. Envíanos mensaje para apartar.
+        </p>
+        <div class="chips" aria-label="Beneficios">
+          <span class="chip">Ofertas → pedido privado</span>
+          <span class="chip">Respuesta rápida</span>
+          <span class="chip">Paquetes disponibles</span>
+        </div>
+        <div class="ctaRow">
+          <a class="btn primary" href="#inventory" id="primaryCta">Ver Inventario</a>
+          <a class="btn" href="#pickup" id="secondaryCta">Info de Recogida</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="inventory" aria-label="Inventario">
+      <h2 id="inventoryTitle">Inventario Destacado</h2>
+      <p class="sectionNote" id="inventoryNote">Toca cualquier producto para mandar mensaje y apartarlo. Imágenes y precios salen de data.json.</p>
+      <div class="grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <section id="bundles" aria-label="Paquetes">
+      <h2 id="bundlesTitle">Paquetes (Bundles)</h2>
+      <p class="sectionNote" id="bundlesNote">Ahorra más comprando en paquete. Los paquetes también salen de data.json.</p>
+      <div class="grid" id="bundleGrid" aria-live="polite"></div>
+    </section>
+
+    <section id="pickup" aria-label="Área de recogida">
+      <h2 id="pickupTitle">Área de Recogida</h2>
+      <p class="sectionNote" id="pickupNote">Cita previa. Compartimos el punto exacto después de confirmar.</p>
+
+      <div class="panel">
+        <p><strong>Ciudad:</strong> <span id="pickupCity">Alpharetta, GA</span></p>
+        <p style="margin-top:6px"><strong>Pedido:</strong> <span id="pickupHow">Envíanos mensaje por WhatsApp para apartar.</span></p>
+        <p style="margin-top:6px"><strong>WhatsApp:</strong> <span id="waNumber">+1 (404) 565-7099</span></p>
+
+        <div class="row">
+          <a class="btn primary" id="waBtn" href="#" target="_blank" rel="noopener">Enviar mensaje</a>
+          <a class="btn" id="waBtn2" href="#" target="_blank" rel="noopener">Confirmar</a>
+        </div>
+      </div>
+
+      <footer>
+        <div>JR Tools USA • Local Pickup • Hecho con SnapLaunch</div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    (async function(){
+      const $ = (s) => document.querySelector(s);
+
+      // Load JSON
+      let cfg;
+      try{
+        const res = await fetch("data.json", { cache: "no-store" });
+        cfg = await res.json();
+      }catch(e){
+        console.error(e);
+        $("#promoText").textContent = "No se pudo cargar data.json. Verifica que exista y el Live Server esté activo.";
+        return;
+      }
+
+      const lang = "es";
+      const labels = (cfg.labels && cfg.labels[lang]) ? cfg.labels[lang] : {};
+
+      // Brand + hero
+      const brand = cfg.brand || "JR Tools USA";
+      const pickup = cfg.pickup || "Alpharetta, GA";
+      const whatsapp = cfg.whatsapp || "";
+      const heroImg = cfg.heroImage || "";
+      const theme = cfg.theme || {};
+
+      // Apply theme colors (optional)
+      const root = document.documentElement;
+      if(theme.bg) root.style.setProperty("--bg", theme.bg);
+      if(theme.bg2) root.style.setProperty("--bg2", theme.bg2);
+      if(theme.card) root.style.setProperty("--card", theme.card);
+      if(theme.accent) root.style.setProperty("--accent", theme.accent);
+      if(theme.accent2) root.style.setProperty("--accent2", theme.accent2);
+
+      // Text labels
+      $("#brandText").textContent = cfg.logoText || brand;
+
+      $("#promoText").textContent = (labels.promo || `Inventario limitado — actualizado semanalmente. Recogida rápida en ${pickup}.`)
+        .replace("{pickup}", pickup);
+
+      $("#promoBtn").textContent = labels.promoBtn || "Ver disponibles";
+
+      $("#navInventory").textContent = labels.navInventory || "Inventario";
+      $("#navBundles").textContent = labels.navBundles || "Paquetes";
+      $("#navPickup").textContent = labels.navPickup || "Recogida";
+      $("#navLang").textContent = labels.navLang || "EN";
+      $("#orderBtnTop").textContent = labels.navOrder || "Ordenar";
+
+      $("#headline").textContent = labels.headline || "Herramientas Pro. Precios Reales.";
+      $("#subhead").textContent = (labels.subhead || `Tienda híbrida creada por mí. Recogida en ${pickup}. Precios claros. Envíanos mensaje para apartar.`)
+        .replace("{pickup}", pickup);
+
+      $("#primaryCta").textContent = labels.primaryCta || "Ver Inventario";
+      $("#secondaryCta").textContent = labels.pickupTitle || "Info de Recogida";
+
+      $("#inventoryTitle").textContent = labels.inventoryTitle || "Inventario Destacado";
+      $("#inventoryNote").textContent = labels.inventoryNote || "Toca cualquier producto para mandar mensaje y apartarlo. Imágenes y precios salen de data.json.";
+      $("#bundlesTitle").textContent = labels.bundlesTitle || "Paquetes (Bundles)";
+      $("#bundlesNote").textContent = labels.bundlesNote || "Ahorra más comprando en paquete. Los paquetes también salen de data.json.";
+      $("#pickupTitle").textContent = labels.pickupTitle || "Área de Recogida";
+      $("#pickupNote").textContent = labels.pickupNote || "Cita previa. Compartimos el punto exacto después de confirmar.";
+
+      $("#pickupCity").textContent = pickup;
+      $("#pickupHow").textContent = labels.orderThis ? `${labels.orderThis}: ${labels.messageOrder || "Enviar mensaje"}` : "Envíanos mensaje por WhatsApp para apartar.";
+      $("#waNumber").textContent = whatsapp ? `+${whatsapp.replace(/\D/g,"")}` : "—";
+
+      // Hero background image
+      if(heroImg){
+        const hero = $("#heroBg");
+        hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.55)), url("${heroImg}")`;
+        hero.style.backgroundSize = "cover";
+        hero.style.backgroundPosition = "center";
+      }
+
+      // WhatsApp link helper
+      const waLink = (text) => {
+        const digits = String(whatsapp || "").replace(/\D/g, "");
+        if(!digits) return "#";
+        return `https://wa.me/${digits}?text=${encodeURIComponent(text)}`;
+      };
+
+      // Buttons at pickup panel
+      const msgOrder = labels.messageOrder || "Enviar mensaje";
+      const msgConfirm = labels.checkAvailability || "Confirmar";
+      $("#waBtn").textContent = msgOrder;
+      $("#waBtn2").textContent = msgConfirm;
+
+      $("#waBtn").href = waLink(`${msgOrder} — ${brand} (${pickup})`);
+      $("#waBtn2").href = waLink(`${msgConfirm} — ${brand} (${pickup})`);
+
+      // Card builder
+      const productGrid = $("#productGrid");
+      const bundleGrid  = $("#bundleGrid");
+
+      const isSoldOutStatus = (status) => {
+        const s = String(status || "").toLowerCase().trim();
+        return (
+          s.includes("sold out") ||
+          s.includes("agotado") ||
+          s.includes("out of stock") ||
+          s.includes("vendido")
+        );
+      };
+
+      const money = (n) => {
+        const num = Number(n);
+        if(!Number.isFinite(num)) return "";
+        return "$" + Math.round(num).toString();
+      };
+
+      const makeCard = (item, type) => {
+        const name  = String(item.name || "").trim();
+        const desc  = String(item.desc || "").trim();
+        const price = item.price;
+        const status = String(item.status || "").trim();
+        const img   = String(item.img || "").trim();
+
+        const card = document.createElement("article");
+        card.className = "card";
+
+        // sold-out styling (DOES NOT HIDE)
+        if(isSoldOutStatus(status)) card.classList.add("sold-out");
+
+        const thumb = document.createElement("div");
+        thumb.className = "thumb";
+
+        if(img){
+          const im = document.createElement("img");
+          im.src = img;
+          im.alt = name || (type === "bundle" ? "Paquete" : "Producto");
+          im.loading = "lazy";
+          thumb.appendChild(im);
+        }else{
+          thumb.textContent = "IMAGEN";
+        }
+
+        const body = document.createElement("div");
+        body.className = "cardBody";
+        body.innerHTML = `
+          <h3 class="name">${escapeHtml(name)}</h3>
+          <p class="desc">${escapeHtml(desc)}</p>
+          <div class="priceRow">
+            <div class="price">${money(price)}</div>
+            <div class="meta">
+              ${escapeHtml(labels.statusLabel || "Estado")}: <span class="statusColor">${escapeHtml(status || "-")}</span>
+            </div>
+          </div>
+        `;
+
+        const actions = document.createElement("div");
+        actions.className = "cardActions";
+
+        const btn1 = document.createElement("a");
+        btn1.className = "btn primary";
+        btn1.target = "_blank";
+        btn1.rel = "noopener";
+        btn1.textContent = labels.orderThis || "Ordenar";
+
+        const btn2 = document.createElement("a");
+        btn2.className = "btn";
+        btn2.target = "_blank";
+        btn2.rel = "noopener";
+        btn2.textContent = labels.checkAvailability || "Confirmar";
+
+        // WhatsApp message
+        const labelType = (type === "bundle") ? (labels.bundlesTitle || "Paquete") : (labels.inventoryTitle || "Producto");
+        const msg1 = `${btn1.textContent}: ${name} — ${money(price)} — ${labelType} — ${brand} (${pickup})`;
+        const msg2 = `${btn2.textContent}: ${name} — ${brand} (${pickup})`;
+
+        btn1.href = waLink(msg1);
+        btn2.href = waLink(msg2);
+
+        // OPTIONAL: if sold out, disable the primary action (keeps visible)
+        if(isSoldOutStatus(status)){
+          btn1.classList.remove("primary");
+          btn1.style.opacity = "0.75";
+          btn1.style.pointerEvents = "none";
+          btn1.style.cursor = "not-allowed";
+          btn1.title = "Agotado";
+        }
+
+        actions.appendChild(btn1);
+        actions.appendChild(btn2);
+
+        card.appendChild(thumb);
+        card.appendChild(body);
+        card.appendChild(actions);
+
+        return card;
+      };
+
+      // Render
+      const products = Array.isArray(cfg.products) ? cfg.products : [];
+      const bundles  = Array.isArray(cfg.bundles)  ? cfg.bundles  : [];
+
+      products.forEach(p => productGrid.appendChild(makeCard(p, "product")));
+      bundles.forEach(b => bundleGrid.appendChild(makeCard(b, "bundle")));
+
+      // If none
+      if(products.length === 0){
+        productGrid.innerHTML = `<div class="panel"><p>No hay productos en data.json todavía.</p></div>`;
+      }
+      if(bundles.length === 0){
+        bundleGrid.innerHTML = `<div class="panel"><p>No hay paquetes en data.json todavía.</p></div>`;
+      }
+
+      // Escape helper
+      function escapeHtml(str){
+        return String(str || "")
+          .replaceAll("&","&amp;")
+          .replaceAll("<","&lt;")
+          .replaceAll(">","&gt;")
+          .replaceAll('"',"&quot;")
+          .replaceAll("'","&#039;");
+      }
+    })();
+  </script>
+</body>
+</html>
